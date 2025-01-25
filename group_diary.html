@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 19 </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>GROUP 19</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="group_diary.html" class="fw-bold active">Group Diary</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="style_guide.html">Style Guide</a></li>
+                <li><a href="result.html">Result</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="project-button">
+            <a href="https://tl-1279.github.io/group19/" class="btn">Go to project</a>
+        </div>
+    </header>
+
+    <div class="container mt-4">
+        <br>
+        <h2 class="text-center d-flex" style="color:white">Group Diary</h2>
+        
+        <!-- Horizontal Nav tabs - Removed periods from week numbers -->
+        <div class="d-flex">
+            <ul class="nav nav-tabs flex-nowrap" id="weekTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-week="1">Week 1</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-week="2">Week 2</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-week="3">Week 3</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-week="4">Week 4</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-week="5">Week 5</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-week="6">Week 6</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-week="7">Week 7</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-week="8">Week 8</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-week="9">Week 9</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Table Content -->
+        <div class="table-responsive mt-4">
+            <table class="table table-bordered shadow-sm" id="workTable">
+                <thead>
+                    <tr>
+                        <th>Stt</th>
+                        <th>Mssv</th>
+                        <th>Name</th>
+                        <th>Work</th>
+                        <th>Completion Rate</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Table content will be dynamically populated -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const weeklyData = {
+                    1: [
+                { stt: 1, mssv: "23130239", name: "Hồ Duy Phú", work: "Tạo Repository cho web nhóm, chia việc cho mọi người", completion: 100 },
+                { stt: 2, mssv: "23130277", name: "Đinh Văn Son", work: "Tìm hiểu github", completion: 100 },
+                { stt: 3, mssv: "23130171", name: "Nguyễn Thị Thuỷ Linh", work: "Tìm hiểu github", completion: 100 },
+                { stt: 4, mssv: "19130064", name: "Cao Sơn Hào", work: "Tìm hiểu github", completion: 100 },
+                { stt: 5, mssv: "22130151", name: "Hoàng Minh Long", work: "Tìm hiểu github", completion: 100 }
+            ],
+            2: [
+                { stt: 1, mssv: "23130239", name: "Hồ Duy Phú", work: "Code trang Home của web nhóm", completion: 70 },
+                { stt: 2, mssv: "19130064", name: "Cao Sơn Hào", work: "Code trang project", completion: 100 },
+                { stt: 3, mssv: "23130171", name: "Nguyễn Thị Thuỷ Linh", work: "Code trang result", completion: 85 },
+                { stt: 4, mssv: "23130277", name: "Đinh Văn Son", work: "Code trang about", completion: 100 },
+                { stt: 5, mssv: "22130151", name: "Hoàng Minh Long", work: "Code trang style guide", completion: 70 }
+            ],
+            3: [
+                { stt: 1, mssv: "23130239", name: "Hồ Duy Phú", work: "Code trang Home của web nhóm", completion: 100 },
+                { stt: 2, mssv: "19130064", name: "Cao Sơn Hào", work: "Code trang project", completion: 100 },
+                { stt: 3, mssv: "23130171", name: "Nguyễn Thị Thuỷ Linh", work: "Code trang result", completion: 100 },
+                { stt: 4, mssv: "23130277", name: "Đinh Văn Son", work: "Code trang about", completion: 100 },
+                { stt: 5, mssv: "22130151", name: "Hoàng Minh Long", work: "Code trang style guide", completion: 100 }
+            ],
+            4: [
+                { stt: 1, mssv: "23130239", name: "Hồ Duy Phú", work: "Code trang Home của web nhóm", completion: 100 },
+                { stt: 2, mssv: "19130064", name: "Cao Sơn Hào", work: "Code trang project", completion: 100 },
+                { stt: 3, mssv: "23130171", name: "Nguyễn Thị Thuỷ Linh", work: "Code trang group diary", completion: 100 },
+                { stt: 4, mssv: "23130277", name: "Đinh Văn Son", work: "Code trang contact", completion: 100 },
+                { stt: 5, mssv: "22130151", name: "Hoàng Minh Long", work: "Code trang style guide", completion: 100 }
+            ],
+            5: [
+                { stt: 1, mssv: "23130239", name: "Hồ Duy Phú", work: "Liên kết các trang lại với nhau", completion: 100 },
+                { stt: 2, mssv: "19130064", name: "Cao Sơn Hào", work: "Liên kết các trang lại với nhau", completion: 100 },
+                { stt: 3, mssv: "23130171", name: "Nguyễn Thị Thuỷ Linh", work: "Liên kết các trang lại với nhau", completion: 100 },
+                { stt: 4, mssv: "23130277", name: "Đinh Văn Son", work: "Liên kết các trang lại với nhau", completion: 100 },
+                { stt: 5, mssv: "22130151", name: "Hoàng Minh Long", work: "Liên kết các trang lại với nhau", completion: 100 }
+            ],
+            6: [
+                { stt: 1, mssv: "23130239", name: "Hồ Duy Phú", work: "Meeting chia việc thiết kết web project", completion: 100 },
+                { stt: 2, mssv: "19130064", name: "Cao Sơn Hào", work: "Tìm thiết kế", completion: 100 },
+                { stt: 3, mssv: "23130277", name: "Đinh Văn Son", work: "Tìm màu cho phù hợp", completion: 100 },
+                { stt: 4, mssv: "23130171", name: "Nguyễn Thị Thuỷ Linh", work: "Tìm thiết kế", completion: 100 },
+                { stt: 5, mssv: "22130151", name: "Hoàng Minh Long", work: "Tìm thiết kế", completion: 100 }
+            ],
+            7: [
+                { stt: 1, mssv: "19130064", name: "Cao Sơn Hào", work: "Code Vũng Tàu, gói du lịch", completion: 50 },
+                { stt: 2, mssv: "23130277", name: "Đinh Văn Son", work: "Code Sapa, booking", completion: 50 },
+                { stt: 3, mssv: "23130171", name: "Nguyễn Thị Thuỷ Linh", work: "Blog, contact", completion: 70 },
+                { stt: 4, mssv: "22130151", name: "Hoàng Minh Long", work: "Code Cần Thơ, login", completion: 60 },
+                { stt: 5, mssv: "23130239", name: "Hồ Duy Phú", work: "Code Đà Lạt, giao diện web", completion: 30 }
+            ],
+            8: [
+                { stt: 1, mssv: "19130064", name: "Cao Sơn Hào", work: "Code Vũng Tàu, gói du lịch", completion: 100 },
+                { stt: 2, mssv: "23130277", name: "Đinh Văn Son", work: "Code Sapa, booking", completion: 100 },
+                { stt: 3, mssv: "23130171", name: "Nguyễn Thị Thuỷ Linh", work: "Blog, contact", completion: 100 },
+                { stt: 4, mssv: "22130151", name: "Hoàng Minh Long", work: "Code Cần Thơ, login", completion: 100 },
+                { stt: 5, mssv: "23130239", name: "Hồ Duy Phú", work: "Code Đà Lạt, giao diện web", completion: 100 }
+            ],
+            9: [
+                { stt: 1, mssv: "23130239", name: "Hồ Duy Phú", work: "Meeting chia việc thiết kết web project", completion: 100 },
+                { stt: 2, mssv: "19130064", name: "Cao Sơn Hào", work: "Tìm thiết kế", completion: 100 },
+                { stt: 3, mssv: "23130277", name: "Đinh Văn Son", work: "Tìm màu cho phù hợp", completion: 100 },
+                { stt: 4, mssv: "23130171", name: "Nguyễn Thị Thuỷ Linh", work: "Tìm thiết kế", completion: 100 },
+                { stt: 5, mssv: "22130151", name: "Hoàng Minh Long", work: "Tìm thiết kế", completion: 100 }
+            ],
+            
+        };
+
+        function generateProgressBar(percentage) {
+            let colorClass = 'bg-info';
+            if (percentage >= 90) colorClass = 'bg-success';
+            else if (percentage >= 70) colorClass = 'bg-primary';
+            else if (percentage >= 50) colorClass = 'bg-warning';
+            else colorClass = 'bg-danger';
+
+            return `
+                <div class="progress">
+                    <div class="progress-bar ${colorClass}" role="progressbar" 
+                         style="width: ${percentage}%;" 
+                         aria-valuenow="${percentage}" 
+                         aria-valuemin="0" 
+                         aria-valuemax="100">${percentage}%</div>
+                </div>
+            `;
+        }
+
+        function updateTable(weekNumber) {
+            const tableBody = document.getElementById('tableBody');
+            const weekData = weeklyData[weekNumber];
+            
+            tableBody.innerHTML = weekData.map(person => `
+                <tr>
+                    <td>${person.stt}</td>
+                    <td>${person.mssv}</td>
+                    <td>${person.name}</td>
+                    <td>${person.work}</td>
+                    <td>${generateProgressBar(person.completion)}</td>
+                </tr>
+            `).join('');
+        }
+
+        document.querySelectorAll('.nav-link').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                document.querySelectorAll('.nav-link').forEach(t => t.classList.remove('active'));
+                e.target.classList.add('active');
+                updateTable(e.target.getAttribute('data-week'));
+            });
+        });
+
+        updateTable(1);
+    </script>
+   
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-group-info">
+                <h3>GROUP 19</h3>
+                <p>Hồ Chí Minh Nông Lâm University<br>Thủ Đức City, Hồ Chí Minh City, Việt Nam</p>
+                <p>Phone: +89 094 816 254<br>Email: hci2025group19@gmail.com</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="group_diary.html">Group Diary</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="style_guide.html">Style Guide</a></li>
+                    <li><a href="result.html">Result</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-members">
+                <h4>Our Members</h4>
+                <ul>
+                    <li><a href="#">Hồ Duy Phú</a></li>
+                    <li><a href="#">Đinh Văn Son</a></li>
+                    <li><a href="#">Nguyễn Thị Thuỷ Linh</a></li>
+                    <li><a href="#">Cao Sơn Hào</a></li>
+                    <li><a href="#">Hoàng Minh Long</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>Newsletter</h4>
+                <form>
+                    <input type="email" placeholder="Email is here" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 19</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        background-image: url("https://phunugioi.com/wp-content/uploads/2020/02/mau-background-dep.jpg");
+        background-size: cover; 
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    :root {
+        --primary-color: #7a5ba6; /* Tím đậm, bớt bão hòa */
+        --secondary-color: #4db6ac; /* Xanh mòng két làm điểm nhấn */
+        --light-background: #f9f9f9; /* Nền trắng nhạt */
+        --text-color: #333; /* Chữ xám đậm */
+        --border-radius: 8px;
+        --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    :after {
+        box-sizing: inherit;
+        margin: 0;
+        padding: 0;
+    }
+    
+    html {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.7;
+        background-color: var(--light-background);
+        color: var(--text-color);
+        overflow-x: hidden;
+    
+    }
+    
+    /* Header styles */
+    header {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 1.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: var(--box-shadow);
+    }
+    
+    .logo h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+    }
+    
+    nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    nav a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: var(--secondary-color);
+    }
+    
+    nav a.active {
+        background-color: white;
+        color: var(--primary-color);
+    }
+    
+    .project-button .btn {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: 0.3s ease;
+    }
+    
+    .project-button .btn:hover {
+        background-color: darken(var(--secondary-color), 10%);
+    }
+    
+    /* Hero section */
+    .hero {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: white;
+    }
+    
+    .hero h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero h3 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    iframe {
+        width: 100%;
+        height: 60vh;
+        border: none;
+        display: block;
+    }
+    
+    .container-card {
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .cards {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .card {
+        width: 250px;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        border: 1.5px solid #003366;
+        /* border-color: #003366; */
+    }
+    
+    .profile-pic {
+        border-radius: 10px;
+        text-align: center;
+    }
+    
+    .profile-pic h3 {
+        font-size: 21px;
+    }
+    
+    .profile-pic img {
+        width: 75%;
+        height: 175px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+    
+    .divider {
+    height: 1px;
+    background-color: #000;
+    margin: 15px 20px 3px 20px;
+}
+    .divider-ul {
+        padding-left: 35px;
+    }
+    
+    .divider-ul li {
+        text-align: left;
+    }
+    
+    .divider-ul li a {
+        text-decoration: none;
+        color: #000;
+    
+    }
+    
+    section h4 {
+        font-size: 16px;
+    }
+    
+    section p {
+        font-size: 14px;
+        margin: 10px 10px;
+    }
+    
+    .btn-outline {
+        display: inline-block;
+        text-decoration: none;
+        background-color: transparent;
+        color: #003366;
+        border: 2px solid #003366;
+        padding: 10px 30px;
+        font-size: 16px; 
+        border-radius: 5px; 
+        transition: all 0.3s ease;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+    
+    .btn-outline:hover {
+        background-color: #003366;
+        color: #fff;
+        border-color: #003366;
+    }
+    
+    .btn-outline:focus {
+        outline: none;
+        box-shadow: 0 0 5px #003366;
+    }
+    
+    /* Footer Styles */
+    
+    /* Footer Styles */
+    footer {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 3rem 2rem;
+    }
+    
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Sử dụng grid cho footer, responsive hơn */
+        gap: 2rem;
+    }
+    
+    .footer-group-info h3,
+    .footer-links h4,
+    .footer-members h4,
+    .footer-newsletter h4 {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .footer-links ul,
+    .footer-members ul {
+        list-style: none;
+    }
+    
+    .footer-links a,
+    .footer-members a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        display: block; /* Để link nằm dọc */
+        padding: 0.3rem 0; /* Thêm padding cho dễ click */
+        transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover,
+    .footer-members a:hover {
+        color: white;
+    }
+    </style>
+<body>
+    <header>
+        <div class="logo">
+            <h1>GROUP 19</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="group_diary.html">Group Diary</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="style_guide.html">Style Guide</a></li>
+                <li><a href="result.html" class="fw-bold active">Result</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                
+            </ul>
+        </nav>
+        <div class="project-button">
+            <a href="https://tl-1279.github.io/group19/" class="btn">Go to project</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>RESULT</h1>
+    </section>
+
+    <section class="container-card">
+        <div class="cards">
+            <div class="card">
+                <div class="profile-pic">
+                    <h3>Hồ Duy Phú</h3>
+                    <p style="font-size: 17px;">Leader</p>
+                    <p>MSSV - 23130239</p>
+
+                    <!-- Phần Trang web nhóm -->
+                    <div class="divider-container">
+                        <div class="divider"></div>
+                        <section>
+                            <h4>Trang web nhóm</h4>
+                            <ul class="divider-ul">
+                                <li><a href="about.html" class="divider-link">About</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                    
+
+                    <!-- Phần Trang web project -->
+                    <div class="divider-container">
+                        <div class="divider"></div>
+                        <section>
+                            <h4>Trang web project</h4>
+                            <ul class="divider-ul">
+                                <li><a href="https://tl-1279.github.io/dulich/index.html" class="divider-link">Trang chủ</a></li>
+                                <li><a href="https://tl-1279.github.io/dulich/Dalat.html" class="divider-link">Đà Lạt</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                    
+                    <!-- Phần đánh giá -->
+                    <div class="divider"></div>
+                    <section>
+                        <h4>Đánh giá</h4>
+                        <ul class="divider-ul">
+                            <li>Hoàn thành: 100%</li>
+                            <li>Đánh giá: 15.23%</li>
+                        </ul>
+                    </section>
+
+                    <!-- Phần Đánh giá -->
+                    <a href="" class="btn-outline">Result</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="profile-pic">
+                    <h3>Đinh Văn Son</h3>
+                    <p style="font-size: 17px;">Member</p>
+                    <p>MSSV - 2313027</p>
+
+                    <!-- Phần Trang web nhóm -->
+                    <div class="divider-container">
+                        <div class="divider"></div>
+                        <section>
+                            <h4>Trang web nhóm</h4>
+                            <ul class="divider-ul">
+                                <li><a href="index.html" class="divider-link">Home</a></li>
+                                <li><a href="contac.html" class="divider-link">Contact</a></li>
+ 
+                            </ul>
+                        </section>
+                    </div>
+                    
+
+                    <!-- Phần Trang web project -->
+                    <div class="divider-container">
+                        <div class="divider"></div>
+                        <section>
+                            <h4>Trang web project</h4>
+                            <ul class="divider-ul">
+                                <li><a href="https://tl-1279.github.io/dulich/booking.html" class="divider-link">Booking</a></li>
+                                <li><a href="https://tl-1279.github.io/dulich/Sapa.html" class="divider-link">Sapa</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                    
+                    <!-- Phần đánh giá -->
+                    <div class="divider"></div>
+                    <section>
+                        <h4>Đánh giá</h4>
+                        <ul class="divider-ul">
+                            <li>Hoàn thành: 100%</li>
+                            <li>Đánh giá: 24.2%</li>
+                        </ul>
+                    </section>
+
+                    <!-- Phần Đánh giá -->
+                    <a href="" class="btn-outline">Result</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="profile-pic">
+                    <h3>Nguyễn Thị Thuỷ Linh</h3>
+                    <p style="font-size: 17px;">Member</p>
+                    <p>MSSV - 23130171</p>
+
+                    <!-- Phần Trang web nhóm -->
+                    <div class="divider"></div>
+                    <section>
+                        <h4>Trang web nhóm</h4>
+                        <ul class="divider-ul">
+                            <li><a href="group_diary.html" class="divider-link">Group Diary</a></li>
+                            <li><a href="result.html" class="divider-link">Result</a></li>
+                        </ul>
+                    </section>
+
+                    <!-- Phần Trang web project -->
+                    <div class="divider"></div>
+                    <section>
+                        <h4>Trang web project</h4>
+                        <ul class="divider-ul">
+                            <li><a href="https://tl-1279.github.io/dulich/blog.html" class="divider-link">Blog</a></li>
+                            <li><a href="https://tl-1279.github.io/dulich/hotro.html" class="divider-link">Hỗ Trợ</a></li>
+                        </ul>
+                    </section>
+
+                    <!-- Phần đánh giá -->
+                    <div class="divider"></div>
+                    <section>
+                        <h4>Đánh giá</h4>
+                        <ul class="divider-ul">
+                            <li>Hoàn thành: 100%</li>
+                            <li>Đánh giá: 23.31%</li>
+                        </ul>
+                    </section>
+
+                    <!-- Phần Đánh giá -->
+                    <a href="https://tl-1279.github.io/TL-1279/" class="btn-outline">Result</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="profile-pic">
+                    <h3>Cao Sơn Hào</h3>
+                    <p style="font-size: 17px;">Member</p>
+                    <p>MSSV - 19130064</p>
+
+                    <!-- Phần Trang web nhóm -->
+                    <div class="divider"></div>
+                    <section>
+                        <h4>Trang web nhóm</h4>
+                        <ul class="divider-ul">
+                            <li><a href="project.html" class="divider-link">Project</a></li>
+                        </ul>
+                    </section>
+
+                    <!-- Phần Trang web project -->
+                    <div class="divider"></div>
+                    <section>
+                        <h4>Trang web project</h4>
+                        <ul class="divider-ul">
+                            <li><a href="https://tl-1279.github.io/dulich/goidulich.html" class="divider-link">Gói du lịch</a></li>
+                            <li><a href="https://tl-1279.github.io/dulich/vungtau.html" class="divider-link">Vũng Tàu</a></li>
+                        </ul>
+                    </section>
+
+                    <!-- Phần đánh giá -->
+                    <div class="divider"></div>
+                    <section>
+                        <h4>Đánh giá</h4>
+                        <ul class="divider-ul">
+                            <li>Hoàn thành: 100%</li>
+                            <li>Đánh giá: 24.1%</li>
+                        </ul>
+                    </section>
+
+                    <!-- Phần Đánh giá -->
+                    <a href="" class="btn-outline">Result</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="profile-pic">
+                    <h3>Hoàng Minh Long</h3>
+                    <p style="font-size: 17px;">Member</p>
+                    <p>MSSV - 22130151</p>
+
+                    <!-- Phần Trang web nhóm -->
+                    <div class="divider"></div>
+                    <section>
+                        <h4>Trang web nhóm</h4>
+                        <ul class="divider-ul">
+                            <li><a href="style_guide.html" class="divider-link">Style guide</a></li>
+                        </ul>
+                    </section>
+
+                    <!-- Phần Trang web project -->
+                    <div class="divider"></div>
+                    <section>
+                        <h4>Trang web project</h4>
+                        <ul class="divider-ul">
+                            <li><a href="https://tl-1279.github.io/dulich/UILogin.html" class="divider-link">Login</a></li>
+                            <li><a href="https://tl-1279.github.io/dulich/cantho.html" class="divider-link">Cần Thơ</a></li>
+                        </ul>
+                    </section>
+
+                    <!-- Phần đánh giá -->
+                    <div class="divider"></div>
+                    <section>
+                        <h4>Đánh giá</h4>
+                        <ul class="divider-ul">
+                            <li>Hoàn thành: 100%</li>
+                            <li>Đánh giá: 15.16%</li>
+                        </ul>
+                    </section>
+
+                    <!-- Phần Đánh giá -->
+                    <a href="" class="btn-outline">Result</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+   <!-- Footer Section -->
+   <footer>
+    <div class="footer-container">
+        <div class="footer-group-info">
+            <h3>GROUP 19</h3>
+            <p>Hồ Chí Minh Nông Lâm University<br>Thủ Đức City, Hồ Chí Minh City, Việt Nam</p>
+            <p>Phone: +89 094 816 254<br>Email: hci2025group19@gmail.com</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="group_diary.html">Group Diary</a></li>
+                <li><a href="style_guide.html">Style Guide</a></li>
+                <li><a href="result.html">Result</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-members">
+            <h4>Our Members</h4>
+            <ul>
+                <li><a href="#">Hồ Duy Phú</a></li>
+                <li><a href="#">Đinh Văn Son</a></li>
+                <li><a href="#">Nguyễn Thị Thuỷ Linh</a></li>
+                <li><a href="#">Cao Sơn Hào</a></li>
+                <li><a href="#">Hoàng Minh Long</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <form>
+                <input type="email" placeholder="Email is here" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
